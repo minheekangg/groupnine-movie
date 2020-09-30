@@ -3,7 +3,7 @@ import './Movie-Card.css';
 
 function MovieCard(props) {
     const { title, vote_average, vote_count, release_date, overview, poster_path } = props.movie;
-
+    console.log('voting average is', vote_average, vote_average/10 > 1/5);
     return (
         <div className="movie-container">
             <div className="movie-container-left">
@@ -15,12 +15,12 @@ function MovieCard(props) {
                 <p className="movie-description">{overview}</p>
                 <div className="movie-metadata"> 
                     <div>
-                        <span className="filled">★</span>
-                        <span>☆</span>
-                        <span>☆</span>
-                        <span>☆</span>
-                        <span>☆</span>   
-                    </div> 
+                        <span className={ vote_average / 10 > 0 ? "filled-star" : "empty-star"}></span>
+                        <span className={vote_average / 10 > 1 / 5 ? "filled-star" : "empty-star"}></span>
+                        <span className={vote_average / 10 > 2 / 5 ? "filled-star" : "empty-star"}></span>
+                        <span className={vote_average / 10 > 3 / 5 ? "filled-star" : "empty-star"}></span>
+                        <span className={vote_average / 10 > 4 / 5 ? "filled-star" : "empty-star"}></span>
+                    </div>
                     { vote_count && <p>{vote_count} Reviews</p> }
                 </div>
             </div>

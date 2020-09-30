@@ -44,6 +44,10 @@
     align-items: center;
 }
 
-.filled {
-    content: ★;
+
+.movie-metadata .filled-star::before {
+    content: '★';
+}
+.movie-metadata .empty-star::before {
+    content: '☆';
 }
