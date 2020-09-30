@@ -1,0 +1,41 @@
+.movie-container {
+    display: flex;
+    /* border: 1px solid; */
+    margin: 20px 0;
+}
+
+.movie-container-left {
+    background-color: lightgray;
+    width: 160px;
+    height: 160px;
+    /* margin-right:10px; */
+}
+
+.movie-container-right {
+    flex-basis: 70%;
+    text-align: left;
+    margin: 0 10px;
+}
+
+.movie-container-right h6{
+    font-size: 18px;
+    margin: 0 0 5px;
+}
+
+.movie-container-right p{
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.movie-description {
+    line-height: 1.2em;
+    height: 3.6em;
+    overflow: hidden;
+}
+
+.movie-metadata {
+    color: grey;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
