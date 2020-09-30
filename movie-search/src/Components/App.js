@@ -8,13 +8,11 @@ import './App.css';
 
 class App extends React.Component {
   state = {
-    movies: [],
-    search: 'd'
+    movies: []
   };
 
-  handleSearch = e => {
-    console.log('inside app search is', e);
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${this.state.search}`)
+  handleSearch = searchQuery => {
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${searchQuery}`)
       .then(res=> res.json())
       .then(result => {
         const {results} = result;
@@ -32,7 +30,7 @@ class App extends React.Component {
           <h3>Movie Search App</h3>
         </header>
         <Search handleSearch={this.handleSearch}/>
-        <MovieContainer />
+        <MovieContainer movies={this.state.movies}/>
       </div>
     );
   }
