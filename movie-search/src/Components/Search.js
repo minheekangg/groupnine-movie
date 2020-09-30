@@ -7,8 +7,8 @@ export default class Search extends React.Component {
 
     handleSubmit (e) {
         e.preventDefault();
-
-        console.log(this.state.search);
+        //TODO: validation!
+        this.props.handleSearch(this.state.search);
     }
 
     render() {

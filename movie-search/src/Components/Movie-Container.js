@@ -1,7 +1,11 @@
 import React from 'react';
 
 function MovieContainter() {
-    return <div> I am movie containter</div>
+    return (
+        <div>
+            
+        </div>
+    )
 }
 
 export default MovieContainter;
