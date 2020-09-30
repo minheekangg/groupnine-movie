@@ -2,7 +2,7 @@ import React from 'react';
 
 import MovieCard from './Movie-Card';
 
-function MovieContainter({movies}) {
+function MovieContainter({movies, handleLoadMore}) {
     if (!movies || !movies.length) {
         return <div>nothing to see!</div>;
     }
@@ -12,6 +12,7 @@ function MovieContainter({movies}) {
                 return <MovieCard movie={e} />
             })
         }
+        <button className="load-more-button" onClick={handleLoadMore}> Load More </button>
     </div>
 }
 

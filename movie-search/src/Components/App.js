@@ -5,7 +5,6 @@ import MovieContainer from './Movie-Container';
 
 import './App.css';
 
-
 class App extends React.Component {
   state = {
     movies: [],
@@ -14,15 +13,18 @@ class App extends React.Component {
   };
 
   handleFetch() {
-    const { search, page } = this.state;
+    const { search, page, movies } = this.state;
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${search}&page=${page}`)
       .then(res => res.json())
       .then(result => {
         const { results } = result;
         console.log(result)
-        this.setState({ movies: results }, () => {
-          console.log('after fetch state has been changed to :', this.state);
-        });
+        if (page === 1 ) {
+          this.setState({ movies: results })
+        } else if (page > 1) {
+          this.setState({ movies: [...movies, ...results]})
+        }
+
       })
       .catch(err => console.log('err', err))
   }
