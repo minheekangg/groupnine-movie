@@ -5,8 +5,13 @@
 
 .movie-container-left {
     background-color: lightgray;
+    width: 110px;
     max-width: 110px;
-    height: 160px;
+    height: 145px;
+}
+
+.movie-container-left img{
+    max-width: 100%;
 }
 
 .movie-container-right {
