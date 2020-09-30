@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Search from './Search';
-
+import MovieContainer from './Movie-Container';
 
 console.log(process.env)
 
@@ -12,6 +12,7 @@ function App() {
         Movie Search App
       </header>
       <Search />
+      <MovieContainer />
     </div>
   );
 }

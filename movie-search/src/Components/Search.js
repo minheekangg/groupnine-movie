@@ -9,7 +9,6 @@ export default class Search extends React.Component {
         e.preventDefault();
 
         console.log(this.state.search);
-
     }
 
     render() {
