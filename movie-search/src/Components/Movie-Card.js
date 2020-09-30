@@ -2,11 +2,11 @@ import React from 'react';
 import './Movie-Card.css';
 
 function MovieCard(props) {
-    const { title, vote_average, vote_count, release_date, overview } = props.movie;
-    
+    const { title, vote_average, vote_count, release_date, overview, poster_path } = props.movie;
+
     return (
         <div class="movie-container">
-            <div class="movie-container-left">div for image</div>
+            <img class="movie-container-left" src={`https://image.tmdb.org/t/p/w154${poster_path}`}/>
             <div class="movie-container-right">
                 <h6>{title}</h6>
                 <p class="movie-metadata">{release_date}</p>

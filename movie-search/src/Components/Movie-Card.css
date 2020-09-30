@@ -1,14 +1,12 @@
 .movie-container {
     display: flex;
-    /* border: 1px solid; */
     margin: 20px 0;
 }
 
 .movie-container-left {
     background-color: lightgray;
-    width: 160px;
+    max-width: 110px;
     height: 160px;
-    /* margin-right:10px; */
 }
 
 .movie-container-right {
@@ -28,8 +26,8 @@
 }
 
 .movie-description {
-    line-height: 1.2em;
-    height: 3.6em;
+    line-height: 18px;
+    height: 56px;
     overflow: hidden;
 }
 
@@ -37,5 +35,5 @@
     color: grey;
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
+    margin: 0 0 10px;
 }
