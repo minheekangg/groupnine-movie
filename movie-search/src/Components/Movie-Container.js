@@ -4,7 +4,7 @@ import MovieCard from './Movie-Card';
 
 function MovieContainter({movies, handleLoadMore}) {
     if (!movies || !movies.length) {
-        return <div>nothing to see!</div>;
+        return null;
     }
     return <div>
         {
