@@ -15,7 +15,6 @@ export default class Search extends React.Component {
         return (
             <form onSubmit={e=>this.handleSubmit(e)}>
                 <input value={this.state.search} onChange={e=>this.setState({search: e.target.value})}/>
-                <button />
             </form>
         )
     }
