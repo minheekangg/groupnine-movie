@@ -9,7 +9,7 @@ function MovieContainter({movies, handleLoadMore}) {
     return <div>
         {
             movies.map(e=> {
-                return <MovieCard movie={e} />
+                return <MovieCard movie={e} key={e.id}/>
             })
         }
         <button className="load-more-button" onClick={handleLoadMore}> Load More </button>
