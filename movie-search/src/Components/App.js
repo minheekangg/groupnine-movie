@@ -12,17 +12,18 @@ class App extends React.Component {
     search: '',
   };
 
-  handleFetch() {
+  handleFetch(old) {
     const { search, page, movies } = this.state;
+    console.log('old?', old)
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${search}&page=${page}`)
       .then(res => res.json())
       .then(result => {
         const { results } = result;
         console.log(result)
-        if (page === 1 ) {
-          this.setState({ movies: results })
-        } else if (page > 1) {
+        if (!!old) {
           this.setState({ movies: [...movies, ...results]})
+        } else {
+          this.setState({ movies: results })
         }
 
       })
@@ -30,12 +31,13 @@ class App extends React.Component {
   }
 
   handleSearch = searchQuery => {
+    console.log('searched', searchQuery);
     if (searchQuery === this.state.search) return;
-    this.setState({ search: searchQuery }, () => this.handleFetch());
+    this.setState({ search: searchQuery, page: 1 }, () => this.handleFetch());
   }
 
   handleLoadMore = () => {
-    this.setState({ page: this.state.page + 1 }, () => this.handleFetch());
+    this.setState({ page: this.state.page + 1 }, () => this.handleFetch({old: true}));
   }
 
   render() {
