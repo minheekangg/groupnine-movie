@@ -14,8 +14,14 @@ function MovieCard(props) {
                 <p className="movie-metadata">{trimYear(release_date)}</p>
                 <p className="movie-description">{overview}</p>
                 <div className="movie-metadata"> 
-                    <p>{vote_average}</p> 
-                    <p>{vote_count}</p> 
+                    <div>
+                        <span className="filled">★</span>
+                        <span>☆</span>
+                        <span>☆</span>
+                        <span>☆</span>
+                        <span>☆</span>   
+                    </div> 
+                    { vote_count && <p>{vote_count} Reviews</p> }
                 </div>
             </div>
         </div>
